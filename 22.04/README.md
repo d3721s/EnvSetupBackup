@@ -36,7 +36,6 @@ git clone https://github.com/snwh/ubuntu-post-install.git && cd ubuntu-post-inst
 
 # 关闭休眠
 ```sh
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
 # qt
