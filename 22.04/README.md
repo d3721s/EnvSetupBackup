@@ -2,7 +2,9 @@
 ```sh
 sudo visudo
 ```
+
 ```
+# 加在最后一行
 runyu ALL=(ALL) NOPASSWD: ALL
 ```
 
