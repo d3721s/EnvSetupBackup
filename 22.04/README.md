@@ -46,6 +46,7 @@ sudo apt install libxcb-cursor0 libxcb-cursor-dev
 wget https://mirrors.cloud.tencent.com/qt/archive/online_installers/4.8/qt-online-installer-linux-x64-4.8.0.run
 ./qt-online-installer-linux-x64-4.8.0.run --mirror https://mirrors.cloud.tencent.com/qt
 ```
+
 ## qt5(apt方式)
 ```sh
 sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
@@ -53,3 +54,7 @@ sudo apt-get install qtcreator
 sudo apt-get install qt5*
 ```
 ## ROS
+```sh
+wget http://fishros.com/install -O fishros && . fishros
+```
+
