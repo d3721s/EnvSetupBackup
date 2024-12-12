@@ -12,7 +12,7 @@ runyu ALL=(ALL) NOPASSWD: ALL
 ```sh
 sudo nano /etc/apt/sources.list
 ```
-```
+```sh
 deb http://mirrors.tencent.com/ubuntu/ jammy main restricted universe multiverse
 deb http://mirrors.tencent.com/ubuntu/ jammy-security main restricted universe multiverse
 deb http://mirrors.tencent.com/ubuntu/ jammy-updates main restricted universe multiverse
@@ -84,4 +84,13 @@ code --install-extension mhutchie.git-graph
 code --install-extension ms-vscode.hexeditor
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension alibaba-cloud.tongyi-lingma
+```
+
+## miniconda
+```sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+bash Miniconda3-py39_4.12.0-Linux-x86_64.sh
+conda init bash
+conda install -c conda-forge cmake
+conda install -c conda-forge llvm-tools
 ```
