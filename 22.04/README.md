@@ -27,7 +27,9 @@ sudo apt update && sudo apt upgrade
 
 # 安装软件
 ```sh
-sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake net-tools openssh-server git curl llvm clang wget bash
+sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake llvm clang \
+net-tools openssh-server git curl wget bash python3-pip \
+ 
 ```
 
 # 一键代理
@@ -58,3 +60,28 @@ sudo apt-get install qt5*
 wget http://fishros.com/install -O fishros && . fishros
 ```
 
+## code 
+```sh
+sudo snap install code --classic
+```
+
+## pip换源
+```sh
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+
+```
+
+## code插件（建议同步）
+```sh
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-python.python
+code --install-extension ms-vscode.cpptools-extension-pack
+code --install-extension ms-vscode.cpptools-themes
+code --install-extension ms-vscode.makefile-tools
+code --install-extension ms-vscode.remote-explorer
+code --install-extension ms-vscode.remote-server
+code --install-extension mhutchie.git-graph
+code --install-extension ms-vscode.hexeditor
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension alibaba-cloud.tongyi-lingma
+```
