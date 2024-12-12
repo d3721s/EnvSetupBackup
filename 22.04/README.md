@@ -55,12 +55,12 @@ sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
 sudo apt-get install qtcreator
 sudo apt-get install qt5*
 ```
-## ROS
+# ROS
 ```sh
 wget http://fishros.com/install -O fishros && . fishros
 ```
 
-## code 
+# code 
 ```sh
 sudo snap install code --classic
 ```
@@ -68,7 +68,6 @@ sudo snap install code --classic
 ## pip换源
 ```sh
 pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-
 ```
 
 ## code插件（建议同步）
@@ -86,7 +85,7 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension alibaba-cloud.tongyi-lingma
 ```
 
-## miniconda
+# miniconda
 ```sh
 wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 bash Miniconda3-py39_4.12.0-Linux-x86_64.sh
