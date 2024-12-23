@@ -10,6 +10,29 @@ runyu ALL=(ALL) NOPASSWD: ALL
 
 # apt换源
 ```sh
+cat <<'EOF' > /etc/apt/sources.list
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.zju.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.zju.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.zju.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.zju.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.zju.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.zju.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+
+# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+deb https://mirrors.zju.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.zju.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+# deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+# # deb-src http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.zju.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# # deb-src https://mirrors.zju.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+EOF
+```
+
+```sh
 sudo nano /etc/apt/sources.list
 ```
 ```sh
@@ -27,14 +50,14 @@ sudo apt update && sudo apt upgrade
 
 # 安装软件
 ```sh
-sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake llvm clang \
+sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake qtcreator \
 net-tools openssh-server git curl wget bash python3-pip \
  
 ```
 
 # 一键代理
 ```sh
-git clone https://ghp.ci/https://github.com/nelvko/clash-for-linux-install.git && cd clash-for-linux-install && sudo bash -c '. install.sh; exec bash' && cd 
+git clone https://mirror.ghproxy.com//https://github.com/nelvko/clash-for-linux-install.git && cd clash-for-linux-install && sudo bash -c '. install.sh; exec bash' && cd 
 ```
 
 # 安装字体等
@@ -46,15 +69,18 @@ git clone https://github.com/snwh/ubuntu-post-install.git && cd ubuntu-post-inst
 ```sh
 sudo apt install libxcb-cursor0 libxcb-cursor-dev
 wget https://mirrors.cloud.tencent.com/qt/archive/online_installers/4.8/qt-online-installer-linux-x64-4.8.0.run
-./qt-online-installer-linux-x64-4.8.0.run --mirror https://mirrors.cloud.tencent.com/qt
+./qt-online-installer-linux-x64-4.8.0.run  --mirror https://mirrors.ustc.edu.cn/qtproject
 ```
 
 ## qt5(apt方式)
 ```sh
-sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
-sudo apt-get install qtcreator
-sudo apt-get install qt5*
+sudo apt-get install qttools5-dev-tools qtcreator qtbase5-dev qt5-qmake qtbase5-dev-tools
+sudo apt install qtmultimedia5-dev libqt5charts5-dev
+sudo apt-cache search qt | grep -E "^libqt5"
+sudo apt-get install qt5-default
+sudo apt-get install qtbase5-dev qt5-qmake
 ```
+
 # ROS
 ```sh
 wget http://fishros.com/install -O fishros && . fishros
@@ -92,4 +118,22 @@ bash Miniconda3-py39_4.12.0-Linux-x86_64.sh
 conda init bash
 conda install -c conda-forge cmake
 conda install -c conda-forge llvm-tools
+```
+
+# docker
+```sh
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
