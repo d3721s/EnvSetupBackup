@@ -80,11 +80,9 @@ wget https://mirrors.cloud.tencent.com/qt/archive/online_installers/4.8/qt-onlin
 
 ## qt5(apt方式)
 ```sh 
-sudo apt-get install qttools5-dev-tools qtcreator qtbase5-dev qt5-qmake qtbase5-dev-tools
-sudo apt install qtmultimedia5-dev libqt5charts5-dev
-sudo apt-cache search qt | grep -E "^libqt5"
-sudo apt-get install qt5-default
-sudo apt-get install qtbase5-dev qt5-qmake
+
+sudo apt-get install qtcreator  qtbase5-dev qt5-qmake qtbase5-dev-tools  qtmultimedia5-dev libqt5charts5-dev  qtdeclarative5-dev  qttools5-dev-tools
+
 ```
 
 # ROS
@@ -169,4 +167,48 @@ sudo docker run \
 ubuntu:20.04
 
 sudo docker exec -it ubuntu20.04_aarch64 /bin/bash
+```
+# docker-cross-run
+```sh
+sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
+sudo docker run \
+-itd \
+--privileged=true \
+--restart=always \
+--name ubuntu20.04_aarch64 \
+--platform arm64 \
+-v /svn:/svn \
+-v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-e DISPLAY=unix$DISPLAY \
+-e GDK_SCALE \
+-e GDK_DPI_SCALE \
+ubuntu:20.04
+
+sudo docker exec -it ubuntu20.04_aarch64 /bin/bash
+
+```
+
+# ubuntu-port 
+```sh
+cat <<'EOF' > /etc/apt/sources.list
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse
+# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse
+# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse
+# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse
+
+# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse
+# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse
+
+# deb http://ports.ubuntu.com/ubuntu-ports/ focal-security main restricted universe multiverse
+# # deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse
+# # deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse
+EOF
 ```
