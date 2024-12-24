@@ -5,7 +5,7 @@ sudo visudo
 
 ```
 # 加在最后一行
-runyu ALL=(ALL) NOPASSWD: ALL
+runyu   ALL=(ALL) NOPASSWD: ALL
 ```
 
 # apt换源
@@ -51,7 +51,7 @@ sudo apt update && sudo apt upgrade
 # 安装软件
 ```sh
 sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake qtcreator 
-sudo apt install net-tools openssh-server git curl wget bash python3-pip 
+sudo apt install net-tools openssh-server git curl wget bash python3-pip nano 
 sudo apt install 
  
 ```
@@ -169,4 +169,4 @@ sudo docker run \
 ubuntu:20.04
 
 sudo docker exec -it ubuntu20.04_aarch64 /bin/bash
-
+```
