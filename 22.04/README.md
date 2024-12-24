@@ -50,14 +50,20 @@ sudo apt update && sudo apt upgrade
 
 # 安装软件
 ```sh
-sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake qtcreator \
-net-tools openssh-server git curl wget bash python3-pip \
+sudo apt install build-essential gdb gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cmake qtcreator 
+sudo apt install net-tools openssh-server git curl wget bash python3-pip 
+sudo apt install 
  
 ```
 
 # 一键代理
 ```sh
 git clone https://mirror.ghproxy.com//https://github.com/nelvko/clash-for-linux-install.git && cd clash-for-linux-install && sudo bash -c '. install.sh; exec bash' && cd 
+```
+
+```sh
+#图形化代理
+wget https://github.com/2dust/v2rayN/releases
 ```
 
 # 安装字体等
@@ -73,7 +79,7 @@ wget https://mirrors.cloud.tencent.com/qt/archive/online_installers/4.8/qt-onlin
 ```
 
 ## qt5(apt方式)
-```sh
+```sh 
 sudo apt-get install qttools5-dev-tools qtcreator qtbase5-dev qt5-qmake qtbase5-dev-tools
 sudo apt install qtmultimedia5-dev libqt5charts5-dev
 sudo apt-cache search qt | grep -E "^libqt5"
@@ -137,3 +143,4 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
