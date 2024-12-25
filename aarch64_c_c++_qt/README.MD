@@ -66,15 +66,13 @@ systemctl daemon-reload
 systemctl restart docker
 
 ```
+
 # docker-cross
 ```sh
 sudo docker pull --platform arm64 ubuntu:20.04
+sudo apt install qemu-user-static
+sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
-wget https://github.com/multiarch/qemu-user-static/releases/download/v7.2.0-1/qemu-aarch64-static
-tar -xvf qemu-aarch64-static.tar.gz \
-&& chmod 755 qemu-aarch64-static \
-&& sudo cp qemu-aarch64-static /usr/bin/qemu-aarch64-static
-
 
 sudo docker run \
 -itd \
