@@ -177,7 +177,6 @@ sudo docker run \
 --restart=always \
 --name ubuntu20.04_aarch64 \
 --platform arm64 \
--v /svn:/svn \
 -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -e DISPLAY=unix$DISPLAY \
@@ -186,9 +185,12 @@ sudo docker run \
 ubuntu:20.04
 
 sudo docker exec -it ubuntu20.04_aarch64 /bin/bash
-
+sudo docker commit -m="init" -a="runyu" 56bf7a1e4a26 runyu/ubuntu20.04_aarch64:v1
 ```
-
+# 
+```sh
+export DISPLAY=172.17.0.1
+````
 # ubuntu-port 
 ```sh
 cat <<'EOF' > /etc/apt/sources.list
