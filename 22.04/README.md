@@ -146,7 +146,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```sh
 sudo docker pull --platform arm64 ubuntu:20.04
 sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
-wget https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-1/qemu-aarch64-static
+wget https://github.com/multiarch/qemu-user-static/releases/download/v7.2.0-1/qemu-aarch64-static
 tar -xvf qemu-aarch64-static.tar.gz \
 && chmod 755 qemu-aarch64-static \
 && sudo cp qemu-aarch64-static /usr/bin/qemu-aarch64-static
@@ -158,7 +158,6 @@ sudo docker run \
 --restart=always \
 --name ubuntu20.04_aarch64 \
 --platform arm64 \
--v /svn:/svn \
 -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -e DISPLAY=unix$DISPLAY \
