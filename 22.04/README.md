@@ -3,7 +3,7 @@
 sudo visudo
 ```
 
-```
+```sh
 # 加在最后一行
 runyu   ALL=(ALL) NOPASSWD: ALL
 ```
@@ -81,7 +81,7 @@ wget https://mirrors.cloud.tencent.com/qt/archive/online_installers/4.8/qt-onlin
 ## qt5(apt方式)
 ```sh 
 
-sudo apt-get install qtcreator  qtbase5-dev qt5-qmake qtbase5-dev-tools  qtmultimedia5-dev libqt5charts5-dev  qtdeclarative5-dev  qttools5-dev-tools
+sudo apt install qtcreator  qtbase5-dev qt5-qmake qtbase5-dev-tools  qtmultimedia5-dev libqt5charts5-dev  qtdeclarative5-dev  qttools5-dev-tools
 
 ```
 
