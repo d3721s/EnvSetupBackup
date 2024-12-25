@@ -186,10 +186,7 @@ ubuntu:20.04
 sudo docker exec -it ubuntu20.04_aarch64 /bin/bash
 sudo docker commit -m="init" -a="runyu" 56bf7a1e4a26 runyu/ubuntu20.04_aarch64:v1
 ```
-# 
-```sh
-export DISPLAY=172.17.0.1
-````
+
 # ubuntu-port 
 ```sh
 cat <<'EOF' > /etc/apt/sources.list
