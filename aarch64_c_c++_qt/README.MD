@@ -59,7 +59,13 @@ echo \
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+# dockerhub 镜像加速
+```sh
+echo '{"registry-mirrors": ["https://docker.1ms.run"]}' | sudo tee /etc/docker/daemon.json > /dev/null
+systemctl daemon-reload
+systemctl restart docker
 
+```
 # docker-cross
 ```sh
 sudo docker pull --platform arm64 ubuntu:20.04
