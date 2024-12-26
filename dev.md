@@ -3,7 +3,7 @@ wsl ubuntu-22.04
 # python
 wsl ubuntu-22.04+condamini
 # aarch64 c++/qt
-虚拟机 ubuntu-20.04-desktop+docker aarch64
+wsl ubuntu-20.04-desktop+docker aarch64
 # aarch64 python
 wsl ubuntu-20.04+condamini+docker aarch64
 # stm32
