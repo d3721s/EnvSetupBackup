@@ -56,6 +56,13 @@ sudo apt update && sudo apt upgrade
 ```sh
 sudo apt install net-tools openssh-server git curl wget bash python3-pip nano 
 ```
+# qt交叉编译环境
+```sh
+
+```
+
+
+
 
 # docker
 ```sh
