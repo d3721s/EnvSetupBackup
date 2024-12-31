@@ -1,6 +1,7 @@
 # sudo免密码
 ```sh
 sudo visudo
+sudo passwd
 ```
 
 ```sh
