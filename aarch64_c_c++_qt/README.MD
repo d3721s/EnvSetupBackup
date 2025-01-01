@@ -14,6 +14,8 @@ enabled=false
 [interop]
 enabled=false
 appendWindowsPath=false
+[user]
+default=runyu
 ```
 # sudo免密码
 ```sh
