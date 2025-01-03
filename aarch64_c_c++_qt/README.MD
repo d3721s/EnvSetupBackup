@@ -52,11 +52,11 @@ EOF
 ```
 # apt更新
 ```sh
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 # 安装软件
 ```sh
-sudo apt install net-tools openssh-server git curl wget bash python3-pip nano 
+sudo apt install net-tools openssh-server git curl wget bash python3-pip nano  ca-certificates
 ```
 # qt交叉编译环境
 ```sh

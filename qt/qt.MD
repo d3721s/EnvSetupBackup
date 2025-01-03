@@ -38,8 +38,9 @@ sudo apt update && sudo apt upgrade -y
 ```
 # 安装软件
 ```sh
-sudo apt install -y net-tools openssh-server git curl wget bash python3-pip
-sudo apt install -y build-essential gdb
+sudo apt install -y net-tools openssh-server git curl wget bash python3-pip  ca-certificates
+sudo apt install -y build-essential gdb 
+sudo apt install -y cmake
 
 ```
 # code 

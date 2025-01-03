@@ -59,11 +59,13 @@ sudo apt update && sudo apt upgrade
 ```
 # 安装软件
 ```sh
-sudo apt install net-tools openssh-server git curl wget bash python3-pip 
+sudo apt install net-tools openssh-server git curl wget bash python3-pip  ca-certificates
 ```
 # 安装软件
 
 ```sh
+sudo apt-get install libx11-dev
+
 sudo apt install build-essential cmake gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libglew-dev libglfw3-dev
 ```
 # code 
