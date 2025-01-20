@@ -67,10 +67,11 @@ sudo apt install net-tools openssh-server git curl wget bash python3-pip  ca-cer
 ```sh
 sudo apt-get install libx11-dev
 
-sudo apt install build-essential cmake gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libglew-dev libglfw3-dev
+sudo apt install build-essential gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libglew-dev libglfw3-dev
 ```
 # code 
 ```sh
 sudo snap install code --classic
+sudo snap install cmake --classic
 ```
 # fltk

@@ -40,12 +40,12 @@ sudo apt update && sudo apt upgrade -y
 ```sh
 sudo apt install -y net-tools openssh-server git curl wget bash python3-pip  ca-certificates
 sudo apt install -y build-essential gdb 
-sudo apt install -y cmake
 
 ```
 # code 
 ```sh
 sudo snap install code --classic
+sudo snap install cmake --classic
 ```
 
 # qt下载
