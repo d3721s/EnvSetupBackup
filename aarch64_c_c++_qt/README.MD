@@ -28,27 +28,16 @@ runyu   ALL=(ALL) NOPASSWD: ALL
 
  # apt换源
  ```sh
-sudo su
-cat <<'EOF' > /etc/apt/sources.list
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
-# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+bash <(curl -sSL https://linuxmirrors.cn/main.sh) \
+  --source mirrors.tuna.tsinghua.edu.cn \
+  --protocol https \
+  --use-intranet-source false \
+  --install-epel false \
+  --backup true \
+  --upgrade-software false \
+  --clean-cache true \
+  --ignore-backup-tips
 
-# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-# deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-
-# deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-# # deb-src http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-
-# 预发布软件源，不建议启用
-# deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-# # deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-EOF
 ```
 # apt更新
 ```sh
